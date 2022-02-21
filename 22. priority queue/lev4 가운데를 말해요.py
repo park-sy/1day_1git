@@ -7,31 +7,16 @@ rheap = []
 n = int(input())
 for i in range(n):
     a = int(input())
-    if i == 0:
-        heapq.heappush(lheap,(-a,a))
-    elif i == 1:
-        if  a < lheap[0][1]:
-            a1, a2 = heapq.heappop(lheap)
-            heapq.heappush(rheap,(-a1, a2))
-            heapq.heappush(lheap,(-a,a))
-        else:
-            heapq.heappush(rheap,(a,a))
+    if len(lheap) - len(rheap) == 0:
+            heapq.heappush(lheap,(-a,a))   
     else:
-        if len(lheap) - len(rheap) == 0:
-            if a > rheap[0][1]:
-                (a1, a2) = heapq.heappop(rheap)
-                heapq.heappush(lheap,(-a1, a2))
-                heapq.heappush(rheap,(a,a))
-            else:
-                heapq.heappush(lheap,(-a,a))
-            
-        else:
-            if a < lheap[0][1]:
-                a1, a2 = heapq.heappop(lheap)
-                heapq.heappush(rheap,(-a1, a2))
-                heapq.heappush(lheap,(-a,a))
-            else:
-                heapq.heappush(rheap,(a,a))            
+            heapq.heappush(rheap,(a,a))
+
+    if len(rheap) > 0 and lheap[0][1] > rheap[0][1]:
+        l1, l2 = heapq.heappop(lheap)
+        r1, r2 = heapq.heappop(rheap)
+        heapq.heappush(rheap, (-l1, l2)) 
+        heapq.heappush(lheap, (-r1,r2))             
 
     print(lheap[0][1])
 
