@@ -10,9 +10,10 @@ def dfs(graph, root):
 
         if node not in visited:
             visited.append(node)
-            temp = list(set(graph[node]) - set(visited))
-            temp.sort(reverse=True)
-            stack += temp
+            if node in graph:
+                temp = list(set(graph[node]) - set(visited))
+                temp.sort(reverse=True)
+                stack += temp
     return ' '.join(str(i) for i in visited)
 
 def bfs(graph, root):
@@ -23,9 +24,10 @@ def bfs(graph, root):
         node = queue.popleft()
         if node not in visited:
             visited.append(node)
-            temp = list(set(graph[node]) - set(visited))
-            temp.sort()
-            queue.extend(temp)
+            if node in graph:
+                temp = list(set(graph[node]) - set(visited))
+                temp.sort()
+                queue.extend(temp)
     
     return ' '.join(str(i) for i in visited)
 
