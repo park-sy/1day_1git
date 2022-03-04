@@ -27,7 +27,7 @@ def Dijkstra(start):
 for i in range(e):
     v1, v2, v3 = map(int,input().split())
     g[v1].append([v3,v2])
-visit = [0 for i in range(v)]
+
 
 Dijkstra(k)
 for i in d:
