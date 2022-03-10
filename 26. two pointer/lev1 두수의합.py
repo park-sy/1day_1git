@@ -6,7 +6,7 @@ arr.sort()
 x = int(input())
 cnt = 0
 start = 0
-end = 0
+end = n-1
 
 
 while start < end:
