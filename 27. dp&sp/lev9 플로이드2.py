@@ -3,7 +3,6 @@ import sys
 INF = sys.maxsize
 
 
-# 최소 비용 경로를 구하는 재귀함수
 def find_path(i, j):
     if trace[i][j] == 0:
         return []
@@ -23,12 +22,12 @@ for _ in range(int(sys.stdin.readline())):
     dp[x][y] = min(dp[x][y], c)
 
 trace = [[0] * (n+1) for _ in range(n+1)]
-for k in range(1, n+1):                # 플로이드-와샬
+for k in range(1, n+1):                
     for i in range(1, n+1):
         for j in range(1, n+1):
             if dp[i][j] > dp[i][k] + dp[k][j]:
                 dp[i][j] = dp[i][k] + dp[k][j]
-                trace[i][j] = k                                    # 최소 비용이 업데이트 될때 k도 함께 저장
+                trace[i][j] = k                                  
 
 for i in range(1, n+1):
     for j in range(1, n+1):
