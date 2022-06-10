@@ -1,4 +1,4 @@
-# 220608 / 트리 / 11725 / 트리의 부모찾기
+# 220608 / 트리 / 11725 / 트리의 부모찾기 
 import sys
 from collections import deque
 input = sys.stdin.readline
