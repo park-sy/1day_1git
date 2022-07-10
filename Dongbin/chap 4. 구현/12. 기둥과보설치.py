@@ -1,3 +1,4 @@
+# 220710 / 구현 / 기둥과 보 설치
 def solution(n, build_frame):
     k = len(build_frame)
     answer = []
