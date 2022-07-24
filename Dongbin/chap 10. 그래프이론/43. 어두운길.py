@@ -2,15 +2,13 @@
 import sys,heapq
 n,m = map(int,input().split())
 
-g = [[]for _ in range(n)]
 res = 0
 road = []
 for _ in range(m):
     a,b,c = map(int,input().split())
     res += c
     heapq.heappush(road,(c,a,b))
-    g[a].append([c,b])
-    g[b].append([c,a])
+
 
 print(road)
 
