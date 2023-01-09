@@ -13,7 +13,7 @@ def solution(n, m, x, y, r, c, k):
         str, cnt, ax, ay = heapq.heappop(q)
         if (ax, ay) == (r-1,c-1) and cnt == k: return str
         
-        #if abs(ax-r+1)+abs(ay-c+1) > k - cnt: continue
+        if abs(ax-r+1)+abs(ay-c+1) > k - cnt: continue
         for i in range(4):
             nx = ax + dx[i]
             ny = ay + dy[i]
